@@ -9,58 +9,53 @@ export default function Publications() {
   return (
     <PageContainer
       title="Publications"
-      subtitle="Complete list of our research output in journals and conferences."
+      subtitle="The lab's research output covering satellite remote sensing, greenhouse gas quantification, and atmospheric modeling."
     >
       <div className="space-y-16">
         {years.map((year) => (
           <div key={year}>
-            <h2 className="text-3xl font-black text-gray-200 mb-8 border-b border-gray-50 pb-2">
-              {year}
+            <h2 className="text-[13px] font-bold text-gray-400 uppercase tracking-[0.3em] mb-12 pb-4 border-b border-gray-100 flex justify-between items-center">
+              <span>{year}</span>
             </h2>
-            <div className="space-y-8">
+            <div className="space-y-12">
               {publications
                 .filter((p) => p.year === year)
                 .map((pub, idx) => (
                   <motion.div
                     key={pub.id}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
-                    className="relative pl-8 group"
+                    className="group"
                   >
-                    {pub.featured && (
-                      <div className="absolute left-0 top-1 p-1 bg-yellow-50 rounded-full text-yellow-600">
-                        <Star className="w-4 h-4 fill-current" />
-                      </div>
-                    )}
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 leading-snug group-hover:text-[#d44a1c] transition-colors">
                       {pub.title}
                     </h3>
-                    <p className="text-gray-600 mb-2">
+                    <p className="text-base text-gray-600 mb-4 leading-relaxed font-medium">
                       {pub.authors.map((author, i) => (
-                        <span key={i} className={author.includes('Jane Smith') ? 'font-bold underline decoration-blue-200' : ''}>
+                        <span key={i} className={author.includes('Ruijun Dang') ? 'text-gray-900 font-bold border-b border-orange-200' : ''}>
                           {author}{i < pub.authors.length - 1 ? ', ' : ''}
                         </span>
                       ))}
                     </p>
-                    <div className="flex flex-wrap items-center gap-4">
-                      <span className="text-sm font-bold text-gray-500 italic p-1 px-2 bg-gray-50 rounded">{pub.venue}</span>
-                      <div className="flex space-x-3">
+                    <div className="flex flex-wrap items-center gap-6">
+                      <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest">{pub.venue}</span>
+                      <div className="flex space-x-6">
                         {pub.pdf && (
                           <a
                             href={pub.pdf}
-                            className="inline-flex items-center text-xs font-semibold text-blue-600 hover:bg-blue-50 px-2 py-1 rounded transition-colors"
+                            className="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-[#d44a1c] hover:text-[#b03a14] transition-colors"
                           >
-                            <FileText className="w-3 h-3 mr-1" /> PDF
+                            <FileText className="w-3.5 h-3.5 mr-2" /> Download PDF
                           </a>
                         )}
                         {pub.code && (
                           <a
                             href={pub.code}
-                            className="inline-flex items-center text-xs font-semibold text-gray-600 hover:bg-gray-100 px-2 py-1 rounded transition-colors"
+                            className="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-gray-900 transition-colors"
                           >
-                            <Github className="w-3 h-3 mr-1" /> Code
+                            <Github className="w-3.5 h-3.5 mr-2" /> Source Code
                           </a>
                         )}
                       </div>

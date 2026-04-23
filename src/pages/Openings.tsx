@@ -6,86 +6,77 @@ import { groupData } from '../data';
 export default function Openings() {
   return (
     <PageContainer
-      title="Join the Group"
-      subtitle="We are always looking for motivated students and postdocs to join our team."
+      title="Join Us"
+      subtitle="The ACCL lab is always looking for motivated researchers to help advance atmospheric science."
     >
-      <div className="max-w-4xl mx-auto">
-        <div className="bg-blue-600 rounded-3xl p-12 text-white shadow-xl mb-16 relative overflow-hidden">
-          <div className="relative z-10">
-            <h2 className="text-3xl font-black mb-6">Currently Hiring: PhD Positions</h2>
-            <p className="text-blue-50 text-xl leading-relaxed mb-10">
-              We have 2 fully-funded PhD positions starting Fall 2025. Projects focus on "Tactile-based Active Perception" and "Collaborative Multi-Robot Learning".
-            </p>
-            <div className="flex flex-wrap gap-4">
+      <div className="space-y-40">
+        {/* Highlight Section */}
+        <section>
+          <h2 className="text-[13px] font-bold text-gray-400 uppercase tracking-[0.3em] mb-12 pb-4 border-b border-gray-100">Opportunities</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+            <div>
+              <h3 className="text-4xl font-bold text-gray-900 mb-8 tracking-tight">Graduate & Postdoc Positions</h3>
+              <p className="text-xl text-gray-600 leading-relaxed font-medium mb-10">
+                We are currently seeking motivated researchers for projects involving high-performance computing, satellite data analysis, and climate modeling.
+              </p>
               <a
                 href={`mailto:${groupData.email}`}
-                className="bg-white text-blue-600 font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center"
+                className="text-sm font-bold uppercase tracking-[0.2em] text-[#d44a1c] border-b-2 border-[#d44a1c] pb-1 hover:text-[#b03a14] hover:border-[#b03a14] transition-all"
               >
-                Apply Now <Send className="ml-2 h-5 w-5" />
+                Inquire about Openings
               </a>
             </div>
+            <div className="bg-white border border-gray-100 p-12 rounded-2xl">
+              <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-8">What We Value</h4>
+              <ul className="space-y-6">
+                {[
+                  "Strong quantitative background",
+                  "Computational proficiency (Python/Fortran)",
+                  "Curiosity about Earth systems",
+                  "Collaborative mindset"
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-center text-gray-700 font-medium">
+                    <span className="w-1.5 h-1.5 bg-[#d44a1c] rounded-full mr-4"></span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          {/* Decorative circles */}
-          <div className="absolute -top-12 -right-12 w-64 h-64 bg-blue-500 rounded-full opacity-20"></div>
-          <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-white rounded-full opacity-10"></div>
-        </div>
+        </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <section>
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center">
-              <Info className="w-6 h-6 mr-3 text-blue-600" />
-              Information for Prospective Students
-            </h3>
-            <div className="space-y-6">
-              <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
-                <h4 className="font-bold text-lg mb-2">PhD / Master's Students</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Prospective PhD and Master's students must apply through the university's graduate admission portal. Please mention <b>{groupData.piName}</b> in your Statement of Purpose.
-                </p>
+        {/* Details Section */}
+        <section>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+            <div>
+              <h3 className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-10">Prospective Students</h3>
+              <div className="space-y-12">
+                <div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-4">MSc & PhD</h4>
+                  <p className="text-gray-600 leading-relaxed font-medium">
+                    Students interested in pursuing graduate degrees at Peking University should mention <b>{groupData.piName}</b> in their application. We encourage you to reach out early.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-4">Undergraduates</h4>
+                  <p className="text-gray-600 leading-relaxed font-medium">
+                    If you are an undergraduate student at PKU looking for research experience in atmospheric chemistry or climate, please email us with your CV.
+                  </p>
+                </div>
               </div>
-              <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
-                <h4 className="font-bold text-lg mb-2">Postdoctoral Fellows</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Please email your CV, Research Statement, and 3 reference letters directly to {groupData.piName}.
+            </div>
+            <div>
+              <h3 className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-10">Contact Info</h3>
+              <div className="p-12 border border-gray-100 rounded-2xl">
+                <p className="text-gray-500 text-sm mb-4 font-medium">Direct inquiries to:</p>
+                <p className="text-2xl font-bold text-gray-900 mb-8">{groupData.email}</p>
+                <p className="text-xs text-gray-400 font-bold uppercase tracking-widest leading-loose">
+                  Please include a CV and a brief statement of research interests in your email.
                 </p>
               </div>
             </div>
-          </section>
-
-          <section>
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center">
-              <CheckCircle2 className="w-6 h-6 mr-3 text-green-500" />
-              What we look for
-            </h3>
-            <ul className="space-y-4">
-              {[
-                "Strong background in Linear Algebra and Calculus",
-                "Proficiency in Python and PyTorch / TensorFlow",
-                "Passionate about robotics and autonomous systems",
-                "Excellent communication and collaboration skills",
-                "Prior research experience is a plus",
-                "Self-motivated and curious"
-              ].map((item, idx) => (
-                <li key={idx} className="flex items-start">
-                  <span className="w-5 h-5 bg-green-50 text-green-600 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                    ✓
-                  </span>
-                  <span className="text-gray-700">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        </div>
-
-        <div className="mt-20 p-8 border-2 border-dashed border-gray-200 rounded-3xl text-center">
-          <h4 className="text-xl font-bold text-gray-900 mb-4">Undergraduate / Internships</h4>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-            We offer research opportunities for motivated undergraduates. If you are interested in a summer internship or a semester project, please check back in Spring.
-          </p>
-          <a href={`mailto:${groupData.email}`} className="text-blue-600 font-bold hover:underline inline-flex items-center">
-            <Mail className="mr-2 w-5 h-5" /> Inquire about Internships
-          </a>
-        </div>
+          </div>
+        </section>
       </div>
     </PageContainer>
   );

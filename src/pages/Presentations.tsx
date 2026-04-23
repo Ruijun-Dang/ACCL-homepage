@@ -7,46 +7,43 @@ export default function Presentations() {
   return (
     <PageContainer
       title="Presentations"
-      subtitle="Invited talks, conference presentations, and community posters."
+      subtitle="Sharing our findings at major atmospheric science conferences and invited university seminars."
     >
-      <div className="max-w-4xl space-y-12">
+      <div className="space-y-24">
         {presentations.map((pres, idx) => (
           <motion.div
             key={idx}
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.1 }}
-            className="flex flex-col md:flex-row gap-8 pb-12 border-b border-gray-50 last:border-0"
+            className="group"
           >
-            <div className="w-full md:w-48 flex-shrink-0">
-               <div className="flex flex-col h-full justify-between">
-                <div className="text-3xl font-black text-gray-100 mb-2">{pres.date.split(' ')[1]}</div>
-                <div className="px-3 py-1 bg-blue-50 text-blue-600 font-bold text-xs uppercase tracking-widest inline-block rounded w-fit">
-                  {pres.type}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+              <div className="md:col-span-3">
+                 <p className="text-xs font-bold text-[#d44a1c] uppercase tracking-[0.2em] mb-4 font-mono">
+                   {pres.date}
+                 </p>
+                 <div className="px-3 py-1 border border-gray-100 text-gray-400 font-bold text-[10px] uppercase tracking-widest inline-block rounded-full">
+                   {pres.type}
+                 </div>
+              </div>
+              <div className="md:col-span-9">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 leading-snug group-hover:text-blue-700 transition-colors">{pres.title}</h3>
+                <div className="flex flex-wrap gap-y-4 gap-x-10 text-[13px] font-medium text-gray-500 uppercase tracking-wider">
+                  <div className="flex items-center">
+                    <Calendar className="w-4 h-4 mr-3 opacity-30" />
+                    {pres.date}
+                  </div>
+                  <div className="flex items-center">
+                    <MapPin className="w-4 h-4 mr-3 opacity-30" />
+                    {pres.location}
+                  </div>
+                  <div className="flex items-center text-gray-800 font-bold">
+                    {pres.event}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="flex-grow">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{pres.title}</h3>
-              <div className="flex flex-wrap gap-y-2 gap-x-6 text-gray-500 text-sm">
-                <div className="flex items-center">
-                  <Calendar className="w-4 h-4 mr-2 text-gray-400" />
-                  {pres.date}
-                </div>
-                <div className="flex items-center">
-                  <MapPin className="w-4 h-4 mr-2 text-gray-400" />
-                  {pres.location}
-                </div>
-                <div className="flex items-center font-bold text-gray-600">
-                  {pres.event}
-                </div>
-              </div>
-            </div>
-            <div className="hidden md:flex items-center">
-              <button className="p-2 text-gray-300 hover:text-blue-500 transition-colors">
-                <ExternalLink className="w-5 h-5" />
-              </button>
             </div>
           </motion.div>
         ))}
