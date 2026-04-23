@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <PageContainer>
       {/* Hero Section */}
-      <section className="mb-16">
+      <section className="mb-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -28,7 +28,7 @@ export default function Home() {
             {groupData.mission}
           </p>
 
-          <div className="flex flex-wrap gap-4 md:gap-6 mb-12">
+          <div className="flex flex-wrap gap-4 md:gap-6 mb-6">
             <Link
               to="/research"
               className="group inline-flex items-center justify-center px-8 py-4 border border-gray-200 text-sm font-bold uppercase tracking-widest rounded-xl text-gray-700 bg-white hover:bg-[#d44a1c] hover:text-white hover:border-[#d44a1c] transition-all duration-300"
