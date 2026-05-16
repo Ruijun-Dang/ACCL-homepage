@@ -35,8 +35,9 @@ export interface Publication {
 
 export interface ResearchArea {
   title: string;
-  description: string;
+  description: string | string[];
   image: string;
+  relatedPublications?: string;
 }
 
 export interface NewsItem {
@@ -118,19 +119,31 @@ export const members: Member[] = [
 
 export const researchAreas: ResearchArea[] = [
   {
-    title: "Aerosol Remote Sensing",
-    description: "Developing robust inversion algorithms for retrieving multi-angle and polarimetric satellite observations to characterize aerosol optical and physical properties.",
-    image: "https://picsum.photos/seed/aerosol/800/500"
+    title: "Monitoring Background NO₂: Sources and Sinks",
+    description: [
+      "Nitrogen dioxide (NO2) is a key precursor to both PM2.5 and ozone, and governs atmospheric oxidizing capacity. As anthropogenic NOx emissions continuously decline under Clean Air Actions, natural background sources — lightning, soils, and wildfires — now make up a growing fraction of total NOx. However, these background sources remain the least understood component of the NOx budget, and how they will respond to a changing climate remains highly uncertain.",
+      "We aim to better understand background NO2, its sources and sinks, using satellite observations, in situ measurements, and state-of-the-art atmospheric chemistry models. We developed a new geostationary satellite product to monitor free tropospheric (FT) NO2 and used it to constrain lightning NOx emissions. This product provides the first-ever diurnal FT NO2 observations over North America, revealing that current model estimates of lightning NOx emissions are significantly too high."
+    ],
+    image: "/Picture1.gif",
+    relatedPublications: "Dang et al., 2025, PNAS; Dang et al., 2023, ACP; Shah et al., 2023, ACP"
   },
   {
-    title: "Global Climate Modeling",
-    description: "Integrating remote sensing datasets into earth system models to improve the representation of aerosol-climate interactions and radiation budget estimation.",
-    image: "https://picsum.photos/seed/model/800/500"
+    title: "Inferring PM2.5 Nitrate Control Strategy from Satellites",
+    description: [
+      "PM2.5 is a major air pollutant, ranking among the top causes of premature death worldwide. While emission control policies have successfully reduced many PM2.5 components, particulate nitrate has proven unresponsive — owing to the nonlinear chemistry of its formation from multiple precursors (NOx, NH3, and VOCs). Nitrate now accounts for a growing share of PM2.5 mass, making it a critical target for future air quality improvement. Effective control requires knowing which precursor to reduce — but diagnosing this sensitivity has traditionally relied on in situ measurements or computationally expensive models.",
+      "We developed a satellite-based indicator using observations of NH3 and NO2 columns to diagnose PM2.5 nitrate formation sensitivity regimes — providing a simple, globally applicable tool for air quality managers. Applying this approach to East Asia, Europe, and North America, we find that sensitivity regimes vary strongly by region. This tool has also proven effective in monitoring long-term changes in nitrate sensitivity, informing adjustments in emission reduction strategies."
+    ],
+    image: "/Picture2.png",
+    relatedPublications: "Dang et al., 2023, GRL; Dang et al., 2024, ES&T; Oak et al., 2025, ACP"
   },
   {
-    title: "Greenhouse Gas Monitoring",
-    description: "Combining satellite observations with inverse modeling to map global and regional flux of CO2 and methane.",
-    image: "https://picsum.photos/seed/ghg/800/500"
+    title: "Understanding Air Pollution Trends: Health and Climatic Impacts",
+    description: [
+      "PM2.5 and tropospheric ozone are not only harmful to human health but also perturb Earth's energy balance as short-lived climate forcers. Their concentrations are jointly shaped by anthropogenic emissions and meteorology-influenced processes. Quantifying the respective roles of these drivers is essential for assessing the effectiveness of emission controls, while evaluating their health and climatic impacts is critical for informing mitigation policy.",
+      "Using satellite observations and ground-based networks, we monitor long-term trends in PM2.5 and ozone, and apply atmospheric chemistry models to interpret the underlying drivers. Our work highlights the important roles of meteorological variability in shaping pollution trends. We also quantify the climatic consequences of pollution changes — showing that the rapid decline of PM2.5 in China has led to a considerable regional warming effect, underscoring the need for coordinated control of air pollution and climate change."
+    ],
+    image: "/Picture3.png",
+    relatedPublications: "Dang et al., 2021, STOTEN; Dang et al., 2019, GRL; Dang et al., 2019, ACP"
   }
 ];
 

@@ -8,7 +8,7 @@ export default function Group() {
 
   return (
     <PageContainer
-      title="People"
+      title="Group"
       subtitle="Dedicated to remotely sensing and modeling the atmospheric composition."
     >
       <div className="space-y-24">
