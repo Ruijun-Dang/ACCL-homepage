@@ -7,76 +7,59 @@ export default function Openings() {
   return (
     <PageContainer
       title="Join Us"
-      subtitle="The ACCL lab is always looking for motivated researchers to help advance atmospheric science."
     >
-      <div className="space-y-40">
-        {/* Highlight Section */}
-        <section>
-          <h2 className="text-[13px] font-bold text-gray-400 uppercase tracking-[0.3em] mb-12 pb-4 border-b border-gray-100">Opportunities</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-            <div>
-              <h3 className="text-4xl font-bold text-gray-900 mb-8 tracking-tight">Graduate & Postdoc Positions</h3>
-              <p className="text-xl text-gray-600 leading-relaxed font-medium mb-10">
-                We are currently seeking motivated researchers for projects involving high-performance computing, satellite data analysis, and climate modeling.
-              </p>
-              <a
-                href={`mailto:${groupData.email}`}
-                className="text-sm font-bold uppercase tracking-[0.2em] text-[#d44a1c] border-b-2 border-[#d44a1c] pb-1 hover:text-[#b03a14] hover:border-[#b03a14] transition-all"
-              >
-                Inquire about Openings
-              </a>
-            </div>
-            <div className="bg-white border border-gray-100 p-12 rounded-2xl">
-              <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-8">What We Value</h4>
-              <ul className="space-y-6">
-                {[
-                  "Strong quantitative background",
-                  "Computational proficiency (Python/Fortran)",
-                  "Curiosity about Earth systems",
-                  "Collaborative mindset"
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-center text-gray-700 font-medium">
-                    <span className="w-1.5 h-1.5 bg-[#d44a1c] rounded-full mr-4"></span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+        {/* Left Column */}
+        <div className="lg:col-span-7 space-y-16">
+          <section>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 tracking-tight">PhD & Master Students</h3>
+            <p className="text-[1.1rem] text-gray-600 leading-relaxed font-medium">
+              We are currently seeking motivated students for projects involving high-performance computing, satellite data analysis, and atmospheric chemistry modeling.
+            </p>
+          </section>
 
-        {/* Details Section */}
-        <section>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-            <div>
-              <h3 className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-10">Prospective Students</h3>
-              <div className="space-y-12">
-                <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-4">MSc & PhD</h4>
-                  <p className="text-gray-600 leading-relaxed font-medium">
-                    Students interested in pursuing graduate degrees at Peking University should mention <b>{groupData.piName}</b> in their application. We encourage you to reach out early.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-4">Undergraduates</h4>
-                  <p className="text-gray-600 leading-relaxed font-medium">
-                    If you are an undergraduate student at PKU looking for research experience in atmospheric chemistry or climate, please email us with your CV.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-10">Contact Info</h3>
-              <div className="p-12 border border-gray-100 rounded-2xl">
-                <p className="text-gray-500 text-sm mb-4 font-medium">Direct inquiries to:</p>
-                <p className="text-2xl font-bold text-gray-900 mb-8">{groupData.email}</p>
-                <p className="text-xs text-gray-400 font-bold uppercase tracking-widest leading-loose">
-                  Please include a CV and a brief statement of research interests in your email.
-                </p>
-              </div>
-            </div>
+          <section>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 tracking-tight">Postdocs</h3>
+            <p className="text-[1.1rem] text-gray-600 leading-relaxed font-medium">
+              We welcome postdoctoral researchers to join our group. Please contact us to discuss potential projects and fellowship opportunities.
+            </p>
+          </section>
+
+          <section>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 tracking-tight">Undergraduates</h3>
+            <p className="text-[1.1rem] text-gray-600 leading-relaxed font-medium">
+              If you are an undergraduate student at PKU looking for research experience in atmospheric chemistry or climate, please email us with your CV.
+            </p>
+          </section>
+        </div>
+
+        {/* Right Column */}
+        <div className="lg:col-span-5 space-y-6 lg:space-y-8">
+          <div className="bg-white border border-gray-100 p-8 lg:p-10 rounded-2xl">
+            <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">What We Value</h4>
+            <ul className="space-y-4">
+              {[
+                "Strong quantitative background",
+                "Computational proficiency (Python/Fortran/Matlab)",
+                "Curiosity about Earth systems",
+                "Collaborative mindset"
+              ].map((item, idx) => (
+                <li key={idx} className="flex items-center text-gray-700 font-medium">
+                  <span className="w-1.5 h-1.5 bg-[#d44a1c] rounded-full mr-4"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
-        </section>
+          
+          <div className="bg-white border border-gray-100 p-8 lg:p-10 rounded-2xl">
+            <p className="text-gray-500 text-sm mb-4 font-medium uppercase tracking-widest">Direct inquiries to:</p>
+            <p className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">{groupData.email}</p>
+            <p className="text-xs text-gray-400 font-bold uppercase tracking-widest leading-loose">
+              Please include a CV and a brief statement of research interests in your email.
+            </p>
+          </div>
+        </div>
       </div>
     </PageContainer>
   );
