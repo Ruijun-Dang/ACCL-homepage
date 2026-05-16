@@ -53,18 +53,19 @@ export default function Home() {
            initial={{ opacity: 0 }}
            animate={{ opacity: 1 }}
            transition={{ duration: 1, delay: 0.2 }}
-           className="relative aspect-[21/9] overflow-hidden rounded-2xl shadow-sm border border-gray-100"
+           className="relative aspect-[21/9] overflow-hidden rounded-2xl shadow-sm border border-gray-100 bg-gray-50 flex items-center justify-center"
         >
           <img
-            src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=2672"
-            alt="Atmospheric Modeling Visualization"
+            src="/home_banner.jpg"
+            alt="Satellite NO2 Concentration Map"
             className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
+            onError={(e) => {
+              e.currentTarget.src = "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2020/03/nitrogen_dioxide_concentrations_over_italy/21893322-1-eng-GB/Nitrogen_dioxide_concentrations_over_Italy.jpg";
+            }}
           />
           <div className="absolute inset-0 bg-black/10"></div>
           <div className="absolute bottom-10 left-12 right-12 text-white">
-             <p className="text-[11px] font-bold uppercase tracking-[0.3em] opacity-80 mb-2">Remote Sensing Observation</p>
-             <p className="text-sm font-medium max-w-xl">Satellite-based quantification of global atmospheric composition and greenhouse gases.</p>
+             <p className="text-sm font-medium max-w-xl drop-shadow-md">Mapping Nitrogen Dioxide (NO<sub>2</sub>) pollution from the space</p>
           </div>
         </motion.div>
       </section>

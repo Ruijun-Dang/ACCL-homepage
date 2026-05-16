@@ -13,7 +13,6 @@ export function Navbar() {
     { name: 'Research', path: '/research', icon: Rocket },
     { name: 'Group', path: '/group', icon: Users },
     { name: 'Publications', path: '/publications', icon: BookOpen },
-    { name: 'Presentations', path: '/presentations', icon: Talk },
     { name: 'Openings', path: '/openings', icon: UserPlus },
   ];
 
@@ -96,7 +95,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-8 md:space-y-0">
           <div>
             <h3 className="text-base font-bold text-gray-900 mb-2 tracking-tight">{groupData.name}</h3>
-            <p className="text-sm text-gray-500 font-medium letter-spacing-[0.02em]">{groupData.university} | {groupData.school}</p>
+            <p className="text-sm text-gray-500 font-medium letter-spacing-[0.02em]">{groupData.university} | {groupData.school} | {groupData.department}</p>
           </div>
           
           <div className="flex flex-wrap gap-x-12 gap-y-4 text-[12px] font-bold uppercase tracking-[0.15em] text-gray-400">
@@ -106,7 +105,7 @@ export function Footer() {
           </div>
         </div>
         
-        <div className="mt-16 pt-10 border-t border-gray-50 flex flex-col md:flex-row justify-between items-center text-[11px] text-gray-400 uppercase tracking-[0.2em] font-bold">
+        <div className="mt-4 pt-4 border-t border-gray-50 flex flex-col md:flex-row justify-between items-center text-[11px] text-gray-400 uppercase tracking-[0.2em] font-bold">
           <p>&copy; {new Date().getFullYear()} {groupData.shortName} @ PKU. All rights reserved.</p>
           <div className="mt-6 md:mt-0 flex space-x-8">
             <a href={`mailto:${groupData.email}`} className="hover:text-gray-900 underline underline-offset-4 decoration-gray-200 hover:decoration-blue-400 transition-all">Contact</a>
