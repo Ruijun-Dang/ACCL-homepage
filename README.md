@@ -1,20 +1,35 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Atmospheric Composition & Climate Lab @ PKU
 
-# Run and deploy your AI Studio app
+The Atmospheric Composition & Climate Lab (ACCL) at Peking University is led by Ruijun Dang. The group uses satellite observations and atmospheric models to understand atmospheric composition, air quality, and climate interactions.
 
-This contains everything you need to run your app locally.
+Website: https://ruijun-dang.github.io/
 
-View your app in AI Studio: https://ai.studio/apps/a36410ad-54d7-4d45-95fd-233c9e57a404
+## Research Focus
 
-## Run Locally
+ACCL studies the sources, sinks, and variability of atmospheric composition, and how these processes shape air quality and climate under a changing future.
 
-**Prerequisites:**  Node.js
+Key research directions include:
 
+- Background NO2 sources and sinks, including lightning, soils, and wildfires
+- Satellite-based diagnosis of PM2.5 nitrate formation sensitivity
+- Long-term air pollution trends and their health and climatic impacts
+- Interactions among atmospheric chemistry, meteorology, emissions, and climate change
+- Remote sensing and atmospheric modeling for air quality and climate applications
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Affiliation
+
+Ruijun Dang is an Assistant Professor at Peking University, affiliated with the School of Earth and Space Sciences and the Institute of Remote Sensing and GIS.
+
+## Site Sections
+
+- Research: scientific themes and project summaries
+- Group: principal investigator and team members
+- Publications: selected papers and research outputs
+- Presentations: talks, posters, and invited presentations
+- Openings: opportunities for students and postdoctoral researchers
+
+## Contact
+
+Email: rdang@pku.edu.cn
+
+Location: School of Earth and Space Sciences, Peking University, Beijing, China
