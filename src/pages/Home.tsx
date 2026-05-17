@@ -56,12 +56,9 @@ export default function Home() {
            className="relative aspect-[21/9] overflow-hidden rounded-2xl shadow-sm border border-gray-100 bg-gray-50 flex items-center justify-center"
         >
           <img
-            src="/home_banner.jpg"
+            src="/home_banner.png"
             alt="Satellite NO2 Concentration Map"
             className="w-full h-full object-cover"
-            onError={(e) => {
-              e.currentTarget.src = "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2020/03/nitrogen_dioxide_concentrations_over_italy/21893322-1-eng-GB/Nitrogen_dioxide_concentrations_over_Italy.jpg";
-            }}
           />
           <div className="absolute inset-0 bg-black/10"></div>
           <div className="absolute bottom-10 left-12 right-12 text-white">

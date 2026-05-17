@@ -73,7 +73,7 @@ export const members: Member[] = [
     name: "Ruijun Dang 党瑞君",
     role: "PI",
     education: "Assistant Professor",
-    image: "/profile.jpg",
+    image: "/profile.png",
     bio: "Ruijun Dang is an Assistant Professor at the School of Earth and Space Sciences, Peking University. Her research focuses on atmospheric composition, remote sensing, and climate modeling.",
     office: "102, Remote Sensing Building, Peking University",
     timeline: [
